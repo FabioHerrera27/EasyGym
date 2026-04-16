@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background-color: #000;
+    min-height: 100vh;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* Fondo */
+.bg-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(20, 20, 20, 0.6) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 50%, rgba(10, 10, 10, 0.8) 0%, transparent 60%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 40%, #0d0d0d 70%, #080808 100%);
+    z-index: 0;
+}
+
+/* Layout */
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.header-title {
+    font-size: 52px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.header-info {
+    text-align: right;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.plan-container {
+    border: 4px solid #fff; /* 🔥 MÁS GRUESO */
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+/* TOP */
+.plan-top {
+    display: flex;
+    border-bottom: 4px solid #fff;
+    flex: 1.2;
+}
+
+/* Nombre */
+.plan-name-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    border-right: 4px solid #fff;
+}
+
+.plan-name {
+    font-size: 32px;
+    font-weight: 900;
+}
+
+/* Descripción */
+.plan-desc-block {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 🔥 CENTRADO */
+    padding: 20px;
+}
+
+.plan-desc-block ul {
+    text-align: left;
+}
+
+.plan-desc-block li {
+    font-size: 15px;
+    line-height: 2.2;
+}
+
+/* BOTTOM */
+.plan-bottom {
+    display: flex;
+}
+
+/* Precio */
+.plan-price-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 🔥 CENTRADO */
+    border-right: 4px solid #fff;
+}
+
+.plan-price {
+    font-size: 70px;
+    font-weight: 900;
+}
+
+.plan-period {
+    font-size: 14px;
+    margin-top: 8px;
+    color: #ccc;
+}
+
+/* CTA */
+.plan-cta-block {
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.plan-cta-block:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.cta-text {
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
