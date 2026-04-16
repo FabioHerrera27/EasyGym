@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra</title>
+    <link rel="stylesheet" href="finalizarCompraCss.css">
+</head>
+<body>
+    <main class="checkout-page">
+        <section class="checkout-card">
+            <button type="button" class="close-button" aria-label="Cerrar">X</button>
+            <header class="checkout-header">
+                <h1>FINALIZAR COMPRA</h1>
+                <p class="plan-label">PLAN BÁSICO - MONTO $800MXN</p>
+            </header>
+            <form class="checkout-form">
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="nombre">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" placeholder="Nombre">
+                    </div>
+                    <div class="field-group">
+                        <label for="apellido">Apellido</label>
+                        <input id="apellido" name="apellido" type="text" placeholder="Apellido">
+                    </div>
+                </div>
+                <div class="field-row full-width">
+                    <div class="field-group full-width">
+                        <label for="direccion">Dirección</label>
+                        <input id="direccion" name="direccion" type="text" placeholder="Dirección">
+                    </div>
+                </div>
+                <div class="field-row">
+                    <div class="field-group">
+                        <label for="ciudad">Ciudad</label>
+                        <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad">
+                    </div>
+                    <div class="field-group">
+                        <label for="estado">Estado</label>
+                        <input id="estado" name="estado" type="text" placeholder="Estado">
+                    </div>
+                </div>
+                <div class="payment-section">
+                    <p class="payment-title">Método de Pago</p>
+                    <p class="payment-method">Tarjeta de débito</p>
+                    <div class="card-fields">
+                        <input id="tarjeta" name="tarjeta" type="text" placeholder="Número de tarjeta">
+                        <input id="mmaa" name="mmaa" type="text" placeholder="MM/AA">
+                        <input id="cvv" name="cvv" type="text" placeholder="Código CVV">
+                    </div>
+                </div>
+                <button type="submit" class="submit-button">PAGAR</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
