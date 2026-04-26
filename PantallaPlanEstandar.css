@@ -99,6 +99,11 @@ body {
     line-height: 1.6;
 }
 
+.header-info .fecha,
+.header-info .bienvenido {
+    display: block;
+}
+
 .plan-container {
     border: 2.5px solid var(--border-light);
     display: flex;
