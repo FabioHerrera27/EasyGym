@@ -1,11 +1,12 @@
 :root {
     --color-fondo: #050505;
     --color-panel: rgba(255, 255, 255, 0.95);
-    --color-linea: rgba(0, 0, 0, 0.22);
+    --color-linea: rgba(0, 0, 0, 0.18);
     --color-texto: #111111;
-    --color-azul: #0b4f7d;
-    --color-azul-hover: #12659d;
-    --color-chip: #f5f5f5;
+    --color-texto-secundario: #5f6772;
+    --color-acento: #0b5d8b;
+    --color-acento-hover: #1573a8;
+    --color-chip: rgba(255, 255, 255, 0.92);
     --sombra-panel: 0 22px 48px rgba(0, 0, 0, 0.34);
 }
 
@@ -76,7 +77,7 @@ body {
     padding: 18px 24px 16px;
     border-radius: 8px;
     background: var(--color-chip);
-    color: #666666;
+    color: var(--color-texto-secundario);
     font-size: clamp(1.4rem, 2vw, 2rem);
     letter-spacing: 0.4px;
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
@@ -154,8 +155,8 @@ body {
 }
 
 .contenedor-check input:checked + .check-custom {
-    background: linear-gradient(135deg, #1c7ed6, #0b4f7d);
-    border-color: #0b4f7d;
+    background: linear-gradient(135deg, #2e89bb, var(--color-acento));
+    border-color: var(--color-acento);
 }
 
 .columna-foto {
@@ -199,7 +200,7 @@ body {
     border: none;
     border-radius: 8px;
     padding: 14px 18px;
-    background: var(--color-azul);
+    background: var(--color-acento);
     color: #ffffff;
     font-size: 1.4rem;
     cursor: pointer;
@@ -207,7 +208,7 @@ body {
 }
 
 .boton-agregar:hover {
-    background: var(--color-azul-hover);
+    background: var(--color-acento-hover);
     transform: translateY(-1px);
 }
 

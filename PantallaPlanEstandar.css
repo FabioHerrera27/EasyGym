@@ -4,39 +4,64 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-base: #050505;
+    --surface-name: rgba(10, 10, 10, 0.8);
+    --surface-panel: rgba(10, 10, 10, 0.7);
+    --text-main: #ffffff;
+    --text-muted: #b8bec7;
+    --accent: #0b5d8b;
+    --accent-hover: #1573a8;
+    --border-light: rgba(255, 255, 255, 0.92);
+}
+
 body {
     font-family: 'Arial Black', Arial, sans-serif;
-    background-color: #000;
+    background-color: var(--bg-base);
     min-height: 100vh;
-    color: #fff;
+    color: var(--text-main);
+    position: relative;
     overflow: hidden;
 }
 
-/* Fondo */
 .bg-overlay {
     position: fixed;
     inset: 0;
-    background:
-        radial-gradient(ellipse at 20% 50%, rgba(20, 20, 20, 0.6) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(10, 10, 10, 0.8) 0%, transparent 60%),
-        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 40%, #0d0d0d 70%, #080808 100%);
+    background-image: url('https://images.pexels.com/photos/7209145/pexels-photo-7209145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     z-index: 0;
 }
 
-/* Layout */
+.bg-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 3px,
+            rgba(255, 255, 255, 0.01) 3px,
+            rgba(255, 255, 255, 0.01) 4px
+        );
+    opacity: 0.5;
+}
+
 .page-wrapper {
     position: relative;
     z-index: 1;
     min-height: 100vh;
-    padding: 30px 40px;
+    padding: 28px 36px 36px;
     display: flex;
     flex-direction: column;
 }
 
-/* Header */
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 30px;
 }
 
@@ -44,103 +69,139 @@ body {
     font-size: 52px;
     font-weight: 900;
     letter-spacing: 2px;
+    color: var(--text-main);
+    text-transform: uppercase;
+    line-height: 1;
 }
 
 .header-info {
     text-align: right;
     font-size: 13px;
     font-weight: 700;
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-/* CONTENEDOR PRINCIPAL */
 .plan-container {
-    border: 4px solid #fff; /* 🔥 MÁS GRUESO */
+    border: 2.5px solid var(--border-light);
     display: flex;
     flex-direction: column;
     flex: 1;
+    max-height: calc(100vh - 130px);
 }
 
-/* TOP */
 .plan-top {
     display: flex;
-    border-bottom: 4px solid #fff;
+    border-bottom: 2.5px solid var(--border-light);
     flex: 1.2;
 }
 
-/* Nombre */
 .plan-name-block {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 220px;
-    border-right: 4px solid #fff;
+    padding: 30px 40px;
+    min-width: 200px;
+    border-right: 2.5px solid var(--border-light);
+    background: var(--surface-name);
 }
 
 .plan-name {
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 900;
+    color: var(--text-main);
+    text-transform: capitalize;
+    white-space: nowrap;
 }
 
-/* Descripción */
 .plan-desc-block {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* 🔥 CENTRADO */
-    padding: 20px;
+    padding: 30px 40px;
+    background: var(--surface-panel);
 }
 
 .plan-desc-block ul {
-    text-align: left;
+    list-style: disc;
+    padding-left: 20px;
 }
 
-.plan-desc-block li {
-    font-size: 15px;
-    line-height: 2.2;
+.plan-desc-block ul li {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-main);
+    line-height: 1.9;
+    letter-spacing: 0.3px;
 }
 
-/* BOTTOM */
 .plan-bottom {
     display: flex;
+    flex: 1;
 }
 
-/* Precio */
 .plan-price-block {
     flex: 1;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center; /* 🔥 CENTRADO */
-    border-right: 4px solid #fff;
+    padding: 30px 50px;
+    background: var(--surface-name);
+    border-right: 2.5px solid var(--border-light);
 }
 
 .plan-price {
-    font-size: 70px;
+    font-size: 64px;
     font-weight: 900;
+    color: var(--text-main);
+    letter-spacing: -1px;
+    line-height: 1;
+    white-space: nowrap;
 }
 
 .plan-period {
-    font-size: 14px;
-    margin-top: 8px;
-    color: #ccc;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
 }
 
-/* CTA */
 .plan-cta-block {
     min-width: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: rgba(12, 12, 12, 0.88);
+    border-left: 2.5px solid rgba(255, 255, 255, 0.35);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
 }
 
 .plan-cta-block:hover {
-    background: rgba(255,255,255,0.1);
+    background: rgba(34, 34, 34, 0.96);
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.18),
+        0 0 18px rgba(255, 255, 255, 0.18);
+    filter: brightness(1.08);
+}
+
+.plan-cta-block:hover .cta-text {
+    color: var(--text-main);
 }
 
 .cta-text {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 900;
+    color: var(--text-main);
     letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: color 0.2s ease, text-shadow 0.25s ease;
+}
+
+.plan-cta-block:hover .cta-text {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
 }

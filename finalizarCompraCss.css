@@ -1,13 +1,19 @@
 :root {
-    --bg-color: rgba(255, 255, 255, 0.92);
-    --panel-color: rgba(235, 235, 235, 0.9);
-    --text-color: #111;
-    --muted-color: #5c5c5c;
-    --accent-color: #1a8d2f;
-    --danger-color: #d62020;
-    --input-bg: rgba(255, 255, 255, 0.95);
+    --bg-base: #050505;
+    --overlay-strong: rgba(0, 0, 0, 0.72);
+    --overlay-soft: rgba(0, 0, 0, 0.54);
+    --surface-dark: rgba(10, 10, 10, 0.82);
+    --surface-line: rgba(255, 255, 255, 0.12);
+    --input-bg: rgba(255, 255, 255, 0.96);
     --input-border: rgba(0, 0, 0, 0.12);
-    --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+    --text-main: #ffffff;
+    --text-dark: #111111;
+    --text-muted: #b8bec7;
+    --accent: #0b5d8b;
+    --accent-hover: #1573a8;
+    --danger: #b62222;
+    --danger-hover: #d13a3a;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
 }
 
 * {
@@ -16,10 +22,12 @@
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     min-height: 100vh;
-    color: var(--text-color);
-    background: linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)), url("assets/FinalizarCompra.jpg") center/cover no-repeat;
+    color: var(--text-main);
+    background:
+        linear-gradient(var(--overlay-soft), var(--overlay-strong)),
+        url("assets/FinalizarCompra.jpg") center/cover no-repeat;
 }
 
 .checkout-page {
@@ -30,13 +38,15 @@ body {
 }
 
 .checkout-card {
-    width: min(520px, calc(100% - 2rem));
-    max-width: 520px;
-    background: var(--panel-color);
-    border-radius: 28px;
-    padding: 2.2rem 2rem 2.4rem;
-    box-shadow: var(--shadow);
+    width: min(560px, calc(100% - 2rem));
+    max-width: 560px;
     position: relative;
+    padding: 2.4rem 2rem 2.4rem;
+    border: 1px solid var(--surface-line);
+    border-radius: 26px;
+    background: var(--surface-dark);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
 }
 
 .close-button {
@@ -47,10 +57,16 @@ body {
     height: 2.4rem;
     border: none;
     border-radius: 10px;
-    background: var(--danger-color);
-    color: white;
+    background: var(--danger);
+    color: var(--text-main);
     font-weight: 700;
     cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.close-button:hover {
+    background: var(--danger-hover);
+    transform: translateY(-1px);
 }
 
 .checkout-header {
@@ -60,15 +76,19 @@ body {
 
 .checkout-header h1 {
     margin: 0;
-    font-size: clamp(1.75rem, 2.5vw, 2.3rem);
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 0.95;
     letter-spacing: 1px;
+    color: var(--text-main);
 }
 
 .plan-label {
-    margin: 0.85rem auto 0;
-    font-size: 0.95rem;
+    margin: 0.9rem auto 0;
+    color: var(--text-muted);
+    font-size: 0.98rem;
     font-weight: 700;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.8px;
 }
 
 .checkout-form {
@@ -97,18 +117,20 @@ body {
 }
 
 .field-group label {
-    font-weight: 700;
     font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
-.field-group input {
+.field-group input,
+.card-fields input {
     width: 100%;
     border: 1px solid var(--input-border);
     border-radius: 999px;
     padding: 0.95rem 1.15rem;
     background: var(--input-bg);
     font-size: 0.95rem;
-    color: var(--text-color);
+    color: var(--text-dark);
 }
 
 .payment-section {
@@ -119,15 +141,16 @@ body {
 
 .payment-title {
     margin: 0;
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-main);
 }
 
 .payment-method {
     margin: 0;
-    font-size: 1rem;
+    font-size: 0.98rem;
     font-weight: 700;
-    color: var(--muted-color);
+    color: var(--text-muted);
 }
 
 .card-fields {
@@ -137,26 +160,24 @@ body {
     min-width: 0;
 }
 
-.card-fields input {
-    border-radius: 999px;
-    padding: 0.95rem 1rem;
-    border: 1px solid var(--input-border);
-    background: var(--input-bg);
-    color: var(--text-color);
-}
-
 .submit-button {
     width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 0;
     border: none;
     border-radius: 999px;
-    padding: 1rem 0;
-    background: var(--accent-color);
-    color: white;
+    background: var(--accent);
+    color: var(--text-main);
     font-size: 1.05rem;
     font-weight: 700;
     cursor: pointer;
-    margin-top: 0.5rem;
     box-shadow: 0 14px 22px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 680px) {
@@ -169,6 +190,6 @@ body {
     }
 
     .checkout-card {
-        padding: 1.8rem 1.4rem 2rem;
+        padding: 1.9rem 1.4rem 2rem;
     }
 }
