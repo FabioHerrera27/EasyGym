@@ -12,7 +12,7 @@ body {
     background-position: center;
     background-attachment: fixed;
     color: white;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .main-container {
@@ -115,4 +115,59 @@ tbody tr {
 
 .status {
     letter-spacing: 1px;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        margin-right: 0;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 720px;
+    }
+}
+
+@media (max-width: 560px) {
+    .main-container {
+        padding: 14px;
+    }
+
+    .title {
+        font-size: 2.8rem;
+        margin-left: 10px;
+    }
+
+    .cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 10px;
+    }
+
+    .table-card {
+        margin: 0 10px;
+    }
 }

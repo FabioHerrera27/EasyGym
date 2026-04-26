@@ -197,12 +197,16 @@ body {
 }
 
 .boton-agregar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     border-radius: 8px;
     padding: 14px 18px;
     background: var(--color-acento);
     color: #ffffff;
     font-size: 1.4rem;
+    text-decoration: none;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
