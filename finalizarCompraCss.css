@@ -1,0 +1,195 @@
+:root {
+    --bg-base: #050505;
+    --overlay-strong: rgba(0, 0, 0, 0.72);
+    --overlay-soft: rgba(0, 0, 0, 0.54);
+    --surface-dark: rgba(10, 10, 10, 0.82);
+    --surface-line: rgba(255, 255, 255, 0.12);
+    --input-bg: rgba(255, 255, 255, 0.96);
+    --input-border: rgba(0, 0, 0, 0.12);
+    --text-main: #ffffff;
+    --text-dark: #111111;
+    --text-muted: #b8bec7;
+    --accent: #0b5d8b;
+    --accent-hover: #1573a8;
+    --danger: #b62222;
+    --danger-hover: #d13a3a;
+    --shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    color: var(--text-main);
+    background:
+        linear-gradient(var(--overlay-soft), var(--overlay-strong)),
+        url("assets/FinalizarCompra.jpg") center/cover no-repeat;
+}
+
+.checkout-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+.checkout-card {
+    width: min(560px, calc(100% - 2rem));
+    max-width: 560px;
+    position: relative;
+    padding: 2.4rem 2rem 2.4rem;
+    border: 1px solid var(--surface-line);
+    border-radius: 26px;
+    background: var(--surface-dark);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(6px);
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: none;
+    border-radius: 10px;
+    background: var(--danger);
+    color: var(--text-main);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.close-button:hover {
+    background: var(--danger-hover);
+    transform: translateY(-1px);
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: 1.6rem;
+}
+
+.checkout-header h1 {
+    margin: 0;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 0.95;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+.plan-label {
+    margin: 0.9rem auto 0;
+    color: var(--text-muted);
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.checkout-form {
+    display: grid;
+    gap: 1.1rem;
+}
+
+.field-row {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-width: 0;
+}
+
+.field-row.full-width {
+    grid-template-columns: 1fr;
+}
+
+.field-group {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.field-group.full-width {
+    width: 100%;
+}
+
+.field-group label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.field-group input,
+.card-fields input {
+    width: 100%;
+    border: 1px solid var(--input-border);
+    border-radius: 999px;
+    padding: 0.95rem 1.15rem;
+    background: var(--input-bg);
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+.payment-section {
+    margin-top: 0.35rem;
+    display: grid;
+    gap: 0.85rem;
+}
+
+.payment-title {
+    margin: 0;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.payment-method {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.card-fields {
+    display: grid;
+    gap: 0.85rem;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    min-width: 0;
+}
+
+.submit-button {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--text-main);
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 14px 22px rgba(0, 0, 0, 0.18);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 680px) {
+    .field-row {
+        grid-template-columns: 1fr;
+    }
+
+    .card-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-card {
+        padding: 1.9rem 1.4rem 2rem;
+    }
+}
