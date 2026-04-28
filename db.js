@@ -3,9 +3,16 @@ import express from 'express';
 import swaggerJsDoc from 'swagger-jsdoc';
 import mysql from 'mysql2';
 import swaggerUi from 'swagger-ui-express';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const app = express();
 const port = 3000;
+
+app.use(express.static('public'));
 
 app.use(express.json());
 
@@ -30,7 +37,7 @@ bd.connect((error)=>{
 
 
 app.get('/', (req, res) => {
-    res.send('Bienvenidos al server');
+    res.sendFile(path.join(__dirname, 'public', 'PantallaLogIn.html'));
 });
 
 
@@ -46,7 +53,7 @@ const swaggerOptions = {
         },
         servers: [{ url: `http://localhost:${port}` }]
     },
-    apis: ['./server.js'] // Asegúrate de que este nombre sea el de tu archivo actual
+    apis: ['./server.js'] 
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
