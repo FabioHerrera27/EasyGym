@@ -1,53 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Agregar Invitado</title>
-    <link rel="stylesheet" href="AgregarInvitadoCss.css">
-</head>
-<body>
-    <main class="pagina-agregar">
-        <div class="fondo-capa"></div>
-
-        <button type="button" class="boton-cerrar" aria-label="Cerrar" onclick="window.location.href='PantallaInicioUsuario.html'">X</button>
-
-        <section class="panel-agregar">
-            <div class="panel-superior">
-                <h1>Agregar<br>Invitado</h1>
-
-                <label class="foto-box" for="foto-invitado">
-                    <span class="foto-placeholder">Foto</span>
-                    <input id="foto-invitado" name="foto-invitado" type="file" accept="image/*">
-                </label>
-            </div>
-
-            <form class="formulario-invitado">
-                <div class="campo">
-                    <label for="nombre">Nombre</label>
-                    <input id="nombre" name="nombre" type="text">
-                </div>
-
-                <div class="campo">
-                    <label for="apellido">Apellido</label>
-                    <input id="apellido" name="apellido" type="text">
-                </div>
-
-                <div class="campo">
-                    <label for="numero">Número</label>
-                    <input id="numero" name="numero" type="text">
-                </div>
-
-                <div class="campo">
-                    <label for="correo">Correo</label>
-                    <input id="correo" name="correo" type="email">
-                </div>
-
-                <div class="acciones-formulario">
-                    <button type="submit" class="boton-agregar">AGREGAR</button>
-                </div>
-            </form>
-        </section>
-    </main>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -1,59 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pantalla de Inicio</title>
-    <link rel="stylesheet" href="PantallaInicioUsuarioCss.css">
-</head>
-<body>
-    <main class="pantalla-inicio">
-        <div class="capa-oscura"></div>
-
-        <section class="contenido-inicio">
-            <header class="encabezado-inicio">
-                <h1>Hola de nuevo Fabio!</h1>
-                <span class="plan-chip">PLAN PREMIUM</span>
-            </header>
-
-            <section class="panel-invitados" aria-labelledby="titulo-invitados">
-                <h2 id="titulo-invitados">Lista de invitados</h2>
-
-                <div class="tabla-card">
-                    <div class="fila encabezados" role="row">
-                        <span class="columna check-col"></span>
-                        <span class="columna">ID usuario</span>
-                        <span class="columna">Nombre</span>
-                        <span class="columna">Correo electrónico</span>
-                        <span class="columna">Número</span>
-                        <span class="columna">Foto</span>
-                        <span class="columna">Acceso</span>
-                    </div>
-
-                    <div class="fila contenido" role="row">
-                        <div class="columna check-col">
-                            <label class="contenedor-check" aria-label="Seleccionar invitado">
-                                <input type="checkbox">
-                                <span class="check-custom"></span>
-                            </label>
-                        </div>
-                        <span class="columna">Invitado</span>
-                        <span class="columna">Santiago García</span>
-                        <span class="columna correo">santi@gmail.com</span>
-                        <span class="columna">998 878 96</span>
-                        <div class="columna columna-foto">
-                            <div class="avatar-invitado" aria-label="Foto de Santiago García">SG</div>
-                        </div>
-                        <span class="columna">Invitado</span>
-                    </div>
-
-                    <div class="fila acciones">
-                        <span class="contador-seccion">Section 1</span>
-                        <a href="AgregarInvitado.html" class="boton-agregar">AGREGAR INVITADO</a>
-                    </div>
-                </div>
-            </section>
-        </section>
-    </main>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

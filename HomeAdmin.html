@@ -1,82 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gimnasio - Inicio</title>
-    <link rel="stylesheet" href="HomeAdmin.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-</head>
-<body>
-    <div class="main-container">
-        <nav class="navbar">
-            <div class="nav-links">
-                <a href="HomeAdmin.html" class="active">Inicio</a>
-                <a href="PantallaInicioUsuario.html">Miembros</a>
-                <a href="PantallaMembresias.html">Membresías</a>
-                <a href="finalizarCompraBasico.html">$ Pagos</a>
-            </div>
-            <div class="admin-profile">
-                <i class='bx bxs-user-circle'></i> Administrador ------
-            </div>
-        </nav>
-
-        <section class="content">
-            <h1 class="title">Inicio</h1>
-
-            <div class="cards-grid">
-                <div class="card card-blue">
-                    <p>Miembros activos</p>
-                    <i class='bx bx-group'></i>
-                    <h2>----</h2>
-                </div>
-                <div class="card card-red">
-                    <p>Membresías por vencer</p>
-                    <i class='bx bx-megaphone'></i>
-                    <h2>---</h2>
-                </div>
-                <div class="card card-green">
-                    <p>Ingresos del periodo</p>
-                    <i class='bx bx-money'></i>
-                    <h2>$----</h2>
-                </div>
-                <div class="card card-gray">
-                    <p>Accesos del día</p>
-                    <i class='bx bx-calendar-check'></i>
-                    <h2>----</h2>
-                </div>
-            </div>
-
-            <div class="table-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Fecha y hora</th>
-                            <th>Estatus</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>----</td>
-                            <td>----</td>
-                            <td>-----</td>
-                            <td>-----------</td>
-                            <td class="status">------</td>
-                        </tr>
-                        <tr>
-                            <td>----</td>
-                            <td>----</td>
-                            <td>-----</td>
-                            <td>-----------</td>
-                            <td class="status">------</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </div>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
