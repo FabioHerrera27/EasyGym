@@ -4,10 +4,51 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Plan Estándar</title>
+    <title>Plan Estandar</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="PantallaPlanEstandar.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="bg-overlay"></div>
+
+    <div class="page-wrapper container-fluid">
+      <header class="header">
+        <a href="PantallaMembresias.html" class="header-title header-title-link">Planes</a>
+        <div class="header-info">
+          <span class="fecha">30/07/2026</span>
+          <span class="bienvenido">Bienvenido</span>
+        </div>
+      </header>
+
+      <div class="plan-container rounded-2 overflow-hidden">
+        <div class="plan-top">
+          <div class="plan-name-block">
+            <span class="plan-name">Estandar</span>
+          </div>
+          <div class="plan-desc-block">
+            <ul class="mb-0">
+              <li>Acceso completo al gimnasio</li>
+              <li>Acceso a area de box</li>
+              <li>Locker incluido</li>
+              <li>Horario extendido</li>
+              <li>1 invitado ocasional</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="plan-bottom">
+          <div class="plan-price-block">
+            <span class="plan-price">$1,200 MXN</span>
+            <span class="plan-period">por 30 dias</span>
+          </div>
+          <a href="finalizarCompraEstandar.html" class="plan-cta-block btn">
+            <span class="cta-text">Comenzar ahora</span>
+          </a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
