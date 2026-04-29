@@ -61,9 +61,6 @@ body {
 }
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
     margin-bottom: 30px;
     padding: 0 20px;
 }
@@ -139,10 +136,6 @@ tbody tr {
         font-size: 3.5rem;
     }
 
-    .cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
     .table-card {
         overflow-x: auto;
     }
@@ -163,7 +156,6 @@ tbody tr {
     }
 
     .cards-grid {
-        grid-template-columns: 1fr;
         padding: 0 10px;
     }
 

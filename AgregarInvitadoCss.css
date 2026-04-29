@@ -146,12 +146,18 @@ body {
 
 .boton-agregar {
     min-width: 298px;
-    height: 52px;
+    min-height: 64px;
     border: none;
     border-radius: 5px;
     background: var(--color-verde);
     color: #000000;
-    font-size: clamp(1.9rem, 3vw, 2.6rem);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 24px;
+    font-size: clamp(1.8rem, 2.5vw, 2.25rem);
+    line-height: 1;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
