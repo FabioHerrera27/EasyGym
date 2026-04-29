@@ -27,7 +27,7 @@ body {
     color: var(--text-main);
     background:
         linear-gradient(var(--overlay-soft), var(--overlay-strong)),
-        url("assets/FinalizarCompra.jpg") center/cover no-repeat;
+        url("../../assets/FinalizarCompra.jpg") center/cover no-repeat;
 }
 
 .checkout-page {

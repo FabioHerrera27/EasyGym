@@ -30,7 +30,7 @@ body {
     padding: 28px 20px;
     background:
         linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.6)),
-        url("assets/pexels-tima-miroshnichenko-6388373.jpg") center center / cover no-repeat;
+        url("../../assets/pexels-tima-miroshnichenko-6388373.jpg") center center / cover no-repeat;
     overflow: hidden;
 }
 

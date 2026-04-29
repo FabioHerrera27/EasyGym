@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
     background:
         linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72)),
-        url("assets/pexels-tima-miroshnichenko-6388373.jpg") center center / cover no-repeat;
+        url("../../assets/pexels-tima-miroshnichenko-6388373.jpg") center center / cover no-repeat;
     overflow: hidden;
 }
 

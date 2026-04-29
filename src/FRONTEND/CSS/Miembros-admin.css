@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: url("../../assets/Fondo de pantalla proyecto.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container {
+    width: 90%;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0,0,0,0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+}
+
+.menu span {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user {
+    background: rgba(255,255,255,0.1);
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.header h1 {
+    color: white;
+    font-size: 48px;
+}
+
+.btn-add {
+    background: none;
+    border: none;
+    color: #00ff6a;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* TABLA */
+.table-container {
+    background: #e5e5e5;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #d3d3d3;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+tbody tr {
+    border-top: 1px solid #aaa;
+}
+
+/* FILA ACTIVA */
+tbody tr.active {
+    outline: 2px solid #2d8cff;
+    background: #f5faff;
+}
+
+/* IMÁGENES */
+td img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}

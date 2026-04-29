@@ -39,7 +39,7 @@ html {
     padding: 24px;
     background:
         linear-gradient(var(--overlay-soft), var(--overlay-strong)),
-        url("assets/pexels-tima-miroshnichenko-6388373.jpg") no-repeat center center fixed;
+        url("../../assets/pexels-tima-miroshnichenko-6388373.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 

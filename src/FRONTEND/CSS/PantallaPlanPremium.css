@@ -27,7 +27,7 @@ body {
 .bg-overlay {
     position: fixed;
     inset: 0;
-    background-image: url('https://images.pexels.com/photos/7209145/pexels-photo-7209145.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-image: url('../../assets/pexels-oplita-7209145.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
