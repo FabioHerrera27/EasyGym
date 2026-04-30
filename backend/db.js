@@ -1,4 +1,4 @@
-// 1. Importar las dependencias necesarias
+// Importar las dependencias necesarias
 import express from 'express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// 2. Establecer los parámetros de la conexión a la BD (GimnasioBD)
+// Establecer los parámetros de la conexión a la BD (GimnasioBD)
 const bd = mysql.createConnection({
     host: '127.0.0.1',
     user: 'root',
@@ -27,7 +27,7 @@ bd.connect((error) => {
     console.log("Conectado a GimnasioBD :)");
 });
 
-// Endpoint para obtener todos los usuarios
+
 app.get('/usuarios', (req, res) => {
     const query = 'SELECT IDUsuario, Nombre, ApellidoPaterno, Correo, Estatus FROM Usuario';
 

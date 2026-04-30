@@ -2,22 +2,22 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Lista Simple</title>
+    <title>users lista</title>
 </head>
 <body>
 
     <h2>Lista de Usuarios</h2>
-    <div id="contenedor-usuarios">Cargando datos...</div>
+    <div id="contenedor-usuarios">Cargando...</div>
 
     <script>
         fetch('http://localhost:3000/usuarios')
             .then(res => res.json())
             .then(data => {
                 const contenedor = document.getElementById('contenedor-usuarios');
-                contenedor.innerHTML = ''; // Limpiar el texto de carga
+                contenedor.innerHTML = ''; 
 
                 data.forEach(u => {
-                    // Creamos un párrafo simple para cada usuario
+                    
                     const info = document.createElement('p');
                     info.textContent = `ID: ${u.IDUsuario} - Nombre: ${u.Nombre} - Apellido: ${u.ApellidoPaterno} - Correo: ${u.Correo} - Estatus: ${u.Estatus}`;
                     contenedor.appendChild(info);
