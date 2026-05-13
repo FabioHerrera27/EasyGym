@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url('../../assets/Fondo de pantalla proyecto.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.page-title {
+  color: #222;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: #6b6b6b;
+  border: 1px solid #555;
+  border-radius: 6px;
+  width: 600px;
+  padding: 28px 36px 32px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.modal-close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: #cc0000;
+  border: none;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.modal-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.modal-top-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+
+.modal-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Contenedor relativo para foto + menú */
+.photo-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.photo-box {
+  width: 130px;
+  height: 130px;
+  background: #888;
+  border: 2px dashed #bbb;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  color: #ddd;
+  gap: 4px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.photo-box:hover {
+  background: #999;
+  border-color: #eee;
+}
+
+#photoIcon {
+  font-size: 38px;
+  line-height: 1;
+}
+
+#photoHint {
+  font-size: 10px;
+  text-align: center;
+  color: #ddd;
+  padding: 0 6px;
+}
+
+/* Menú desplegable */
+.photo-menu {
+  display: none;
+  position: absolute;
+  top: 134px;
+  left: 0;
+  background: #3a3a3a;
+  border: 1px solid #555;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 100;
+  width: 170px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.photo-menu.visible {
+  display: block;
+}
+
+.photo-menu button {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  background: transparent;
+  border: none;
+  color: #eee;
+  font-size: 13px;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.photo-menu button:hover {
+  background: #555;
+}
+
+/* Modal de cámara */
+.camera-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.camera-modal {
+  background: #2a2a2a;
+  border-radius: 6px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 420px;
+  max-width: 95vw;
+}
+
+.camera-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.camera-close {
+  background: #cc0000;
+  border: none;
+  color: #fff;
+  width: 22px;
+  height: 22px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+#cameraVideo {
+  width: 100%;
+  border-radius: 4px;
+  background: #000;
+}
+
+.btn-capturar {
+  padding: 10px 28px;
+  background: #2ecc55;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-capturar:hover {
+  background: #27b849;
+}
+
+.field-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.field-row label {
+  color: #e0e0e0;
+  font-size: 14px;
+  width: 160px;
+  min-width: 160px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.field-row input {
+  flex: 1;
+  height: 30px;
+  background: #b8b8b8;
+  border: none;
+  border-radius: 2px;
+  padding: 0 8px;
+  font-size: 13px;
+  color: #000;
+  outline: none;
+}
+
+.field-row input:focus {
+  background: #cacaca;
+}
+
+.modal-bottom-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 6px;
+}
+
+.btn-agregar {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px 0;
+  background: #2ecc55;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-agregar:hover {
+  background: #27b849;
+}

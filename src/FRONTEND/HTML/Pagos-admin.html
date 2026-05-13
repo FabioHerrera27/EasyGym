@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pagos</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../CSS/Pagos-admin.css" />
+</head>
+<body>
+
+  <div class="page-wrapper">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="nav-links">
+        <a href="HomeAdmin.html" class="nav-item">
+          <i class='bx bx-dumbbell'></i> Inicio
+        </a>
+        <a href="Miembros-admin.html" class="nav-item">
+          <i class='bx bx-group'></i> Miembros
+        </a>
+        <a href="Membresias-admin.html" class="nav-item">
+          <i class='bx bx-id-card'></i> Membresias
+        </a>
+        <a href="Pagos-admin.html" class="nav-item active">
+          <i class='bx bx-dollar'></i> Pagos
+        </a>
+      </div>
+      <div class="nav-user">
+        <i class='bx bxs-user-circle'></i>
+        <span>Administrador Santiago García</span>
+      </div>
+    </nav>
+
+    <!-- CONTENIDO -->
+    <main class="content">
+      <h1 class="page-title">Pagos</h1>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>#pago</th>
+              <th>ID miembro</th>
+              <th>Nombre</th>
+              <th>Membresía</th>
+              <th>Monto</th>
+              <th>Fecha de pago</th>
+              <th>Estado</th>
+              <th>Comprobante</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>200</td>
+              <td>0882762</td>
+              <td>Diego Villa</td>
+              <td>BÁSICO</td>
+              <td>$99</td>
+              <td>10-10-2026</td>
+              <td>PENDIENTE</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td>201</td>
+              <td>748759</td>
+              <td>Romina López</td>
+              <td>ESTÁNDAR</td>
+              <td>$199</td>
+              <td>10-10-2026</td>
+              <td>PAGADO</td>
+              <td>ADJUNTADO</td>
+            </tr>
+            <tr>
+              <td>202</td>
+              <td>874373</td>
+              <td>Alberto Vaca</td>
+              <td>PREMIUM</td>
+              <td>$399</td>
+              <td>10-10-2026</td>
+              <td>PENDIENTE</td>
+              <td>N/A</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+  </div>
+
+</body>
+</html>

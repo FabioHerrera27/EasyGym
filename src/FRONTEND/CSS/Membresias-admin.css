@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-image: url('../../assets/Fondo de pantalla proyecto.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Overlay azul oscuro semitransparente que cubre todo */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 20, 50, 0.55);
+  z-index: 0;
+}
+
+/* Todo el contenido encima del overlay */
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Etiqueta pequeña superior */
+.page-label {
+  position: fixed;
+  top: 10px;
+  left: 16px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #ccc;
+  z-index: 10;
+}
+
+/* Título centrado */
+.hero {
+  width: 100%;
+  padding: 60px 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 76px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-shadow: 2px 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Área de tarjetas */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 10px 40px 60px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-height: 60vh;
+}
+
+/* Tarjeta individual */
+.card {
+  background: #d9d9d9;
+  border-radius: 12px;
+  width: 260px;
+  padding: 28px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+}
+
+.card-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #111;
+  text-align: center;
+}
+
+.card-list {
+  list-style: disc;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.card-list li {
+  font-size: 13px;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* Botón editar */
+.btn-editar {
+  display: block;
+  width: 100%;
+  padding: 12px 0;
+  background: #1a3a6b;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: auto;
+}
+
+.btn-editar:hover {
+  background: #254f94;
+}

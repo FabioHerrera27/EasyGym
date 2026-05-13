@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agregar Miembro</title>
+  <link rel="stylesheet" href="../CSS/Agregarmiembro-admin.css" />
+</head>
+<body>
+
+  <div class="page-title">Agregar miembro</div>
+
+  <div class="modal-backdrop">
+    <div class="modal">
+
+      <button class="modal-close">✕</button>
+
+      <div class="modal-title">Agregar Miembro</div>
+
+      <div class="modal-top-row">
+        <div class="modal-fields">
+          <div class="field-row">
+            <label>Id</label>
+            <input type="text" />
+          </div>
+          <div class="field-row">
+            <label>Nombre</label>
+            <input type="text" />
+          </div>
+        </div>
+
+        <!-- Bloque de foto -->
+        <div class="photo-wrapper">
+          <div class="photo-box" id="photoBox">
+            <img id="photoPreview" src="" alt="" style="display:none; width:100%; height:100%; object-fit:cover; border-radius:3px;" />
+            <span id="photoIcon">📷</span>
+            <span id="photoHint">Clic para agregar foto</span>
+          </div>
+          <!-- Menú de opciones -->
+          <div class="photo-menu" id="photoMenu">
+            <button id="btnGaleria">🖼 Seleccionar imagen</button>
+            <button id="btnCamara">📸 Tomar foto</button>
+          </div>
+          <!-- Input oculto para galería -->
+          <input type="file" id="fileInput" accept="image/*" style="display:none;" />
+        </div>
+      </div>
+
+      <!-- Campos restantes -->
+      <div class="modal-bottom-fields">
+        <div class="field-row">
+          <label>Apellido</label>
+          <input type="text" />
+        </div>
+        <div class="field-row">
+          <label>Numero</label>
+          <input type="text" />
+        </div>
+        <div class="field-row">
+          <label>Correo</label>
+          <input type="email" />
+        </div>
+        <div class="field-row">
+          <label>Fecha de nacimiento</label>
+          <input type="date" />
+        </div>
+        <div class="field-row">
+          <label>Condición médica</label>
+          <input type="text" />
+        </div>
+        <div class="field-row">
+          <label>Tipo de membresía</label>
+          <input type="text" />
+        </div>
+      </div>
+
+      <button class="btn-agregar">AGREGAR</button>
+
+    </div>
+  </div>
+
+  <!-- Modal de cámara -->
+  <div class="camera-overlay" id="cameraOverlay" style="display:none;">
+    <div class="camera-modal">
+      <div class="camera-header">
+        <span>Tomar foto</span>
+        <button class="camera-close" id="cameraClose">✕</button>
+      </div>
+      <video id="cameraVideo" autoplay playsinline></video>
+      <canvas id="cameraCanvas" style="display:none;"></canvas>
+      <button class="btn-capturar" id="btnCapturar">📸 Capturar</button>
+    </div>
+  </div>
+
+  <script>
+    const photoBox    = document.getElementById('photoBox');
+    const photoMenu   = document.getElementById('photoMenu');
+    const photoPreview= document.getElementById('photoPreview');
+    const photoIcon   = document.getElementById('photoIcon');
+    const photoHint   = document.getElementById('photoHint');
+    const fileInput   = document.getElementById('fileInput');
+    const btnGaleria  = document.getElementById('btnGaleria');
+    const btnCamara   = document.getElementById('btnCamara');
+
+    const cameraOverlay = document.getElementById('cameraOverlay');
+    const cameraVideo   = document.getElementById('cameraVideo');
+    const cameraCanvas  = document.getElementById('cameraCanvas');
+    const btnCapturar   = document.getElementById('btnCapturar');
+    const cameraClose   = document.getElementById('cameraClose');
+
+    let stream = null;
+
+    // Abrir/cerrar menú al hacer clic en el photo-box
+    photoBox.addEventListener('click', () => {
+      photoMenu.classList.toggle('visible');
+    });
+
+    // Cerrar menú si se hace clic fuera
+    document.addEventListener('click', (e) => {
+      if (!photoBox.contains(e.target) && !photoMenu.contains(e.target)) {
+        photoMenu.classList.remove('visible');
+      }
+    });
+
+    // Opción 1: Seleccionar desde galería
+    btnGaleria.addEventListener('click', () => {
+      photoMenu.classList.remove('visible');
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const url = URL.createObjectURL(file);
+      setPhoto(url);
+    });
+
+    // Opción 2: Tomar foto con cámara
+    btnCamara.addEventListener('click', async () => {
+      photoMenu.classList.remove('visible');
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false });
+        cameraVideo.srcObject = stream;
+        cameraOverlay.style.display = 'flex';
+      } catch (err) {
+        alert('No se pudo acceder a la cámara: ' + err.message);
+      }
+    });
+
+    // Capturar fotograma del video
+    btnCapturar.addEventListener('click', () => {
+      cameraCanvas.width  = cameraVideo.videoWidth;
+      cameraCanvas.height = cameraVideo.videoHeight;
+      cameraCanvas.getContext('2d').drawImage(cameraVideo, 0, 0);
+      const dataUrl = cameraCanvas.toDataURL('image/png');
+      setPhoto(dataUrl);
+      cerrarCamara();
+    });
+
+    // Cerrar cámara sin capturar
+    cameraClose.addEventListener('click', cerrarCamara);
+
+    function cerrarCamara() {
+      if (stream) {
+        stream.getTracks().forEach(t => t.stop());
+        stream = null;
+      }
+      cameraOverlay.style.display = 'none';
+    }
+
+    function setPhoto(src) {
+      photoPreview.src = src;
+      photoPreview.style.display = 'block';
+      photoIcon.style.display = 'none';
+      photoHint.style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
